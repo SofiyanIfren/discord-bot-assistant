@@ -1,12 +1,5 @@
-// idées de fonctionnalités (!help pour la liste) : recherche !wiki, !gif api, !youtube query (!play/!pause/!resume), 
-// !convert (binaire, ASCII, hex, octal, RGB conversions)
-// hash/decrypt => MD5, SHA1, SHA256, SHA512 and other hashes / MD5 and SHA1 decrypt search
-// ! trad (eng/fr, see libretranslate) 
-// currency converter / crypto converter
-// joke api (random)
-// citations inspirantes
-// mini-games
 const proverbes = require("./proverbes.json")
+const converter = require("./converter.js")
 
 const Discord   = require("discord.js")
 const config    = require("./config.json")
@@ -15,7 +8,7 @@ const ytdl      = require('ytdl-core')
 
 const prefix = '!'
 
-client.on('ready', () => console.log('Hello World, I\'m awaken!')) // 
+client.on('ready', () => console.log('Hello World, I\'m awaken!')) //  
 
 client.on('message', async message => {
     if (message.author.bot) return // it's not a bot who's speaking
@@ -31,11 +24,45 @@ client.on('message', async message => {
     } else if (command === 'proverbe'){
         const proverbe = proverbes[Math.floor(Math.random() * proverbes.length)]
         message.reply(`${Object.keys(proverbe)[0]} - ${Object.values(proverbe)[0]}`)
-    } else if (command === 'despacito'){
+    } else if (command === 'convert' && args.length === 3){ // !convert <number> <from> <to> 
+        const numberToConvert = args[0]
+        const conversionFrom  = args[1]
+        const conversionTo    = args[2]
+
+        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'octal')
+            converter.binaryToOctal(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'decimal')
+            converter.binaryToDecimal(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'hexadecimal')
+            converter.binaryToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
+
+        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'binary')
+            converter.octalToBinary(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'decimal')
+            converter.octalToDecimal(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'hexadecimal')
+            converter.octalToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
+
+        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'binary')
+            converter.decimalToBinary(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'octal')
+            converter.decimalToOctal(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'hexadecimal')
+            converter.decimalToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
+
+        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'binary')
+            converter.hexadecimalToBinary(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'octal')
+            converter.hexadecimalToOctal(numberToConvert).then((resp) => message.reply(resp))
+        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'decimal')
+            converter.hexadecimalToDecimal(numberToConvert).then((resp) => message.reply(resp))
+    }
+    
+    /*else if (command === 'despacito'){
         voiceChannel = client.channels.cache.get('776491312814882867') // coworking channel id
         const connection = await voiceChannel.join()
         connection.play(await ytdl('https://www.youtube.com/watch?v=kJQP7kiw5Fk', { type: 'opus' }));
-    }
+    }*/
 })
 
 
