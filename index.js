@@ -4,6 +4,7 @@ const converter = require("./converter.js")
 const Discord   = require("discord.js")
 const config    = require("./config.json")
 const client    = new Discord.Client()
+const fetch     = require("node-fetch")
 const ytdl      = require('ytdl-core')
 
 const prefix = '!'
@@ -56,6 +57,22 @@ client.on('message', async message => {
             converter.hexadecimalToOctal(numberToConvert).then((resp) => message.reply(resp))
         if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'decimal')
             converter.hexadecimalToDecimal(numberToConvert).then((resp) => message.reply(resp))
+    } else if (command === 'date' && args.length === 1) { // !date <format>
+        fetch('http://api.aladhan.com/v1/gToH')
+        .then((data) => data.json().then((res) => {
+            const sqlGregorianDate = res.data.gregorian.date
+            const littGregorianDate = res.data.gregorian.weekday.en +' '+ res.data.gregorian.day
+                +' '+ res.data.gregorian.month.en +' '+ res.data.gregorian.year
+            const gregorianDate = sqlGregorianDate +' ('+littGregorianDate+')'
+
+            const sqlHijriDate = res.data.hijri.date
+            const littHijriDate = res.data.hijri.weekday.en +' '+ res.data.hijri.day
+                +' '+ res.data.hijri.month.en +' '+ res.data.hijri.year
+            const hijriDate = sqlHijriDate +' ('+littHijriDate+')'
+            
+            if (args[0] === 'hijri')        message.reply(hijriDate)
+            if (args[0] === 'gregorian')    message.reply(gregorianDate)
+        }))
     }
     
     /*else if (command === 'despacito'){
