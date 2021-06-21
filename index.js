@@ -1,6 +1,7 @@
 const proverbes = require("./proverbes.json")
 const converter = require("./converter.js")
 const calendar  = require("./calendar.js")
+const weather   = require("./weather.js")
 
 const Discord   = require("discord.js")
 const config    = require("./config.json")
@@ -34,6 +35,10 @@ client.on('message', async message => {
     } else if (command === 'date' && args.length === 1) { // !date <format>
         if (args[0] === 'hijri')        calendar.getHijriDate().then((res) => message.reply(res))
         if (args[0] === 'gregorian')    calendar.getGregorianDate().then((res) => message.reply(res))
+    } else if (command === 'weather' && args.length === 1){ // weather <city_name>
+        const city = args[0].toLowerCase()
+        weather.getCityWeather(city)
+        .then((res) => message.reply('City of '+city+' : '+res))
     }
     
     /*else if (command === 'despacito'){
