@@ -21,4 +21,5 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 * <code>!convert <number> <from> <to></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 * <code>!date <format></code> Obtention de la date du jour (Options : gregorian / hijri)
 * <code>!weather <city_name></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
+* <code>!wiki <search/suggestions> <searched_word></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché
 

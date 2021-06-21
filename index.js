@@ -2,6 +2,7 @@ const proverbes = require("./proverbes.json")
 const converter = require("./converter.js")
 const calendar  = require("./calendar.js")
 const weather   = require("./weather.js")
+const wiki   = require("./wiki.js")
 
 const Discord   = require("discord.js")
 const config    = require("./config.json")
@@ -39,6 +40,11 @@ client.on('message', async message => {
         const city = args[0].toLowerCase()
         weather.getCityWeather(city)
         .then((res) => message.reply('City of '+city+' : '+res))
+    } else if (command === 'wiki' && args.length === 2){     // !wiki search/suggestions <word>
+        if (args[0] === 'search')
+            wiki.getWikiSuggestions(args[1]).then((res) => message.reply(res[3][0]))
+        if (args[0] === 'suggestions')
+            wiki.getWikiSuggestions(args[1]).then((res) => res[3].map((r) => message.reply(r)))
     }
     
     /*else if (command === 'despacito'){
