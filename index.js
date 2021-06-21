@@ -1,5 +1,6 @@
 const proverbes = require("./proverbes.json")
 const converter = require("./converter.js")
+const calendar  = require("./calendar.js")
 
 const Discord   = require("discord.js")
 const config    = require("./config.json")
@@ -29,50 +30,10 @@ client.on('message', async message => {
         const numberToConvert = args[0]
         const conversionFrom  = args[1]
         const conversionTo    = args[2]
-
-        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'octal')
-            converter.binaryToOctal(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'decimal')
-            converter.binaryToDecimal(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'hexadecimal')
-            converter.binaryToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
-
-        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'binary')
-            converter.octalToBinary(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'decimal')
-            converter.octalToDecimal(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'hexadecimal')
-            converter.octalToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
-
-        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'binary')
-            converter.decimalToBinary(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'octal')
-            converter.decimalToOctal(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'hexadecimal')
-            converter.decimalToHexadecimal(numberToConvert).then((resp) => message.reply(resp))
-
-        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'binary')
-            converter.hexadecimalToBinary(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'octal')
-            converter.hexadecimalToOctal(numberToConvert).then((resp) => message.reply(resp))
-        if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'decimal')
-            converter.hexadecimalToDecimal(numberToConvert).then((resp) => message.reply(resp))
+        converter.convert(numberToConvert, conversionFrom, conversionTo).then((res) => message.reply(res))
     } else if (command === 'date' && args.length === 1) { // !date <format>
-        fetch('http://api.aladhan.com/v1/gToH')
-        .then((data) => data.json().then((res) => {
-            const sqlGregorianDate = res.data.gregorian.date
-            const littGregorianDate = res.data.gregorian.weekday.en +' '+ res.data.gregorian.day
-                +' '+ res.data.gregorian.month.en +' '+ res.data.gregorian.year
-            const gregorianDate = sqlGregorianDate +' ('+littGregorianDate+')'
-
-            const sqlHijriDate = res.data.hijri.date
-            const littHijriDate = res.data.hijri.weekday.en +' '+ res.data.hijri.day
-                +' '+ res.data.hijri.month.en +' '+ res.data.hijri.year
-            const hijriDate = sqlHijriDate +' ('+littHijriDate+')'
-            
-            if (args[0] === 'hijri')        message.reply(hijriDate)
-            if (args[0] === 'gregorian')    message.reply(gregorianDate)
-        }))
+        if (args[0] === 'hijri')        calendar.getHijriDate().then((res) => message.reply(res))
+        if (args[0] === 'gregorian')    calendar.getGregorianDate().then((res) => message.reply(res))
     }
     
     /*else if (command === 'despacito'){

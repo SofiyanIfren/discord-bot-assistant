@@ -81,6 +81,38 @@ async function decimalToDecimal (hexadecimalNumber) {
     return result
 }
 
+async function convert (numberToConvert, conversionFrom, conversionTo) {
+    let result = ''
+    if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'octal')
+        await binaryToOctal(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'decimal')
+        await binaryToDecimal(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'binary' && conversionTo.toLowerCase() === 'hexadecimal')
+        await binaryToHexadecimal(numberToConvert).then((resp) => result = resp)
+
+    if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'binary')
+        await octalToBinary(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'decimal')
+        await octalToDecimal(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'octal' && conversionTo.toLowerCase() === 'hexadecimal')
+        await octalToHexadecimal(numberToConvert).then((resp) => result = resp)
+
+    if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'binary')
+        await decimalToBinary(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'octal')
+        await decimalToOctal(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'decimal' && conversionTo.toLowerCase() === 'hexadecimal')
+        await decimalToHexadecimal(numberToConvert).then((resp) => result = resp)
+
+    if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'binary')
+        await hexadecimalToBinary(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'octal')
+        await hexadecimalToOctal(numberToConvert).then((resp) => result = resp)
+    if (conversionFrom.toLowerCase() === 'hexadecimal' && conversionTo.toLowerCase() === 'decimal')
+        await hexadecimalToDecimal(numberToConvert).then((resp) => result = resp)
+    return result
+}
+
 
 module.exports = {binaryToOctal,
     binaryToDecimal,
@@ -93,5 +125,6 @@ module.exports = {binaryToOctal,
     decimalToHexadecimal,
     hexadecimalToBinary,
     hexadecimalToOctal,
-    decimalToDecimal
+    decimalToDecimal,
+    convert
 }
