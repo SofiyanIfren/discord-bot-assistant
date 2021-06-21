@@ -21,21 +21,21 @@ client.on('message', async message => {
     const args          = commandBody.split(' ') // tab === ['command', 'arg1', 'arg2', ...]
     const command       = args.shift().toLowerCase()
 
-    if (command === 'ping'){
+    if (command === 'ping'){                                    // !ping
         const timeTaken = Date.now() - message.createdTimestamp
         message.reply(`Pong! This message had a latency of ${timeTaken} ms.`)
-    } else if (command === 'proverbe'){
+    } else if (command === 'proverbe'){                         // !proverbe
         const proverbe = proverbes[Math.floor(Math.random() * proverbes.length)]
         message.reply(`${Object.keys(proverbe)[0]} - ${Object.values(proverbe)[0]}`)
-    } else if (command === 'convert' && args.length === 3){ // !convert <number> <from> <to> 
+    } else if (command === 'convert' && args.length === 3){     // !convert <number> <from> <to> 
         const numberToConvert = args[0]
         const conversionFrom  = args[1]
         const conversionTo    = args[2]
         converter.convert(numberToConvert, conversionFrom, conversionTo).then((res) => message.reply(res))
-    } else if (command === 'date' && args.length === 1) { // !date <format>
+    } else if (command === 'date' && args.length === 1) {       // !date <format>
         if (args[0] === 'hijri')        calendar.getHijriDate().then((res) => message.reply(res))
         if (args[0] === 'gregorian')    calendar.getGregorianDate().then((res) => message.reply(res))
-    } else if (command === 'weather' && args.length === 1){ // weather <city_name>
+    } else if (command === 'weather' && args.length === 1){     // !weather <city_name>
         const city = args[0].toLowerCase()
         weather.getCityWeather(city)
         .then((res) => message.reply('City of '+city+' : '+res))
