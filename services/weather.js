@@ -3,7 +3,7 @@
 *  Temperature in Kelvin is used by default, no need to use units parameter in API call */
 
 const fetch  = require("node-fetch")
-const config = require("./config.json")
+const config = require("../config.json")
 
 async function getCityWeather (city) {
     let celciusTemp   = ''

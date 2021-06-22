@@ -22,4 +22,5 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 * <code>!date <format></code> Obtention de la date du jour (Options : gregorian / hijri)
 * <code>!weather <city_name></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
 * <code>!wiki <search/suggestions> <searched_word></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché
+* <code>!domains <searched_word></code> Obtention d'une liste de domaines suggérée en fonction d'un mot donné'
 
