@@ -27,4 +27,7 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 * <code>!number <searched_word></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )
 * <code>!convert <number> <from></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
 * <code>!convert <number> <from> <to></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
+* <code>!trad <word> <from> <to></code> Traduction d'un mot d'une langue à une autre (Options : fr / en / ar / zh / de / hi / id / ga / it / ja / ko / pl / pt / ru / tr / vi / es)
+* <code>!advice</code> Obtention d'un conseil aléatoire (anglais)
+* <code>!lofi <play/stop></code> Lance de la musique lofi dans l'espace de coworking (chanel vocal)
 
