@@ -18,7 +18,6 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 
 * <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service
 * <code>!proverbe</code> Obtention d'un proverbe à léatoire parmi près de 2500 proverbes d'origine différentes
-* <code>!convert <number> <from> <to></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 * <code>!date <format></code> Obtention de la date du jour (Options : gregorian / hijri)
 * <code>!weather <city_name></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
 * <code>!wiki <search/suggestions> <searched_word></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché
@@ -26,4 +25,6 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 * <code>!cat <searched_word></code> Obtention d'une image de chat aléatoire
 * <code>!anime <searched_word></code> Obtention d'une citation aléatoire d'anime, en anglais
 * <code>!number <searched_word></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )
+* <code>!convert <number> <from></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
+* <code>!convert <number> <from> <to></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 

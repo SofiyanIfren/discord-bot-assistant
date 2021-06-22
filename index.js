@@ -8,7 +8,9 @@ const weather   = require("./services/weather.js")
 const wiki      = require("./services/wiki.js")
 const domains   = require("./services/domains.js")
 const anime     = require("./services/anime.js")
-const numbers    = require("./services/numbers.js")
+const numbers   = require("./services/numbers.js")
+
+const utilsConverter = require("./utils/utilsConverter.js")
 
 const Discord   = require("discord.js")
 const config    = require("./config.json")
@@ -30,39 +32,43 @@ client.on('message', async message => {
 
     const assistantTextChannel = client.channels.cache.get(PERSONNAL_ASSISTANT_CHANNEL_ID)
 
-    if (command === 'ping' && args.length === 0){               // !ping
+    if (command === 'ping' && args.length === 0){               // ***** !ping *****
         const timeTaken = Date.now() - message.createdTimestamp
         assistantTextChannel.send(`Pong! This message had a latency of ${timeTaken} ms.`)
-    } else if (command === 'proverbe' && args.length === 0){    // !proverbe
+    } else if (command === 'proverbe' && args.length === 0){    // ***** !proverbe *****
         const proverbe = proverbes[Math.floor(Math.random() * proverbes.length)]
         assistantTextChannel.send(`${Object.keys(proverbe)[0]} - ${Object.values(proverbe)[0]}`)
-    } else if (command === 'convert' && args.length === 3){     // !convert <number> <from> <to> 
-        const numberToConvert = args[0]
-        const conversionFrom  = args[1]
-        const conversionTo    = args[2]
-        converter.convert(numberToConvert, conversionFrom, conversionTo).then(res => assistantTextChannel.send(res))
-    } else if (command === 'date' && args.length === 1) {       // !date <format>
+    } else if (command === 'date' && args.length === 1) {       // ***** !date <format> *****
         if (args[0] === 'hijri')        calendar.getHijriDate().then(res => assistantTextChannel.send(res))
         if (args[0] === 'gregorian')    calendar.getGregorianDate().then(res => assistantTextChannel.send(res))
-    } else if (command === 'weather' && args.length === 1){     // !weather <city_name>
+    } else if (command === 'weather' && args.length === 1){     // ***** !weather <city_name> *****
         const city = args[0].toLowerCase()
         weather.getCityWeather(city)
         .then(res => assistantTextChannel.send('City of '+city+' : '+res))
-    } else if (command === 'wiki' && args.length === 2){        // !wiki search/suggestions <word>
+    } else if (command === 'wiki' && args.length === 2){        // ***** !wiki search/suggestions <word> *****
         if (args[0] === 'search')
             wiki.getWikiSuggestions(args[1]).then(res => assistantTextChannel.send(res[3][0]))
         if (args[0] === 'suggestions')
             wiki.getWikiSuggestions(args[1]).then(res => assistantTextChannel.send(res[3]))
-    } else if (command === 'domains' && args.length === 1){     // !domains <word>
+    } else if (command === 'domains' && args.length === 1){     // ***** !domains <word> *****
         domains.getSuggestedDomains(args[0]).then((domainsData) => assistantTextChannel.send(domainsData.slice(0,-1)))
-    } else if (command === 'cat' && args.length === 0){         // !cat 
-        fetch('https://thatcopy.pw/catapi/rest/').then(res => res.json().then(cat => message.reply(cat.webpurl)))
-    } else if (command === 'anime' && args.length === 0){       // !anime
-        anime.getRandomAnimeCitation().then(citation => message.reply(citation))
-    } else if (command === 'number' && args.length === 0){      // !number
-        numbers.getRandomNumberFunFact().then(fact => message.reply(fact))
-    } else if (command === 'number' && args.length === 1){      // !number <given_number>
-        numbers.getNumberFunFact(args[0]).then(fact => message.reply(fact))
+    } else if (command === 'cat' && args.length === 0){         // ***** !cat  *****
+        fetch('https:// *****thatcopy.pw/catapi/rest/').then(res => res.json().then(cat => assistantTextChannel.send(cat.webpurl)))
+    } else if (command === 'anime' && args.length === 0){       // ***** !anime *****
+        anime.getRandomAnimeCitation().then(citation => assistantTextChannel.send(citation))
+    } else if (command === 'number' && args.length === 0){      // ***** !number *****
+        numbers.getRandomNumberFunFact().then(fact => assistantTextChannel.send(fact))
+    } else if (command === 'number' && args.length === 1){      // ***** !number <given_number> *****
+        numbers.getNumberFunFact(args[0]).then(fact => assistantTextChannel.send(fact))
+    } else if (command === 'convert'){
+        if (args.length === 3){                                 // ***** !convert <number> <from> <to>  *****
+            const [numberToConvert, conversionFrom, conversionTo] = [args[0], args[1], args[2]]
+            converter.convert(numberToConvert, conversionFrom, conversionTo).then(res => assistantTextChannel.send(res))
+        }
+        if (args.length === 2){                                 // ***** !convert <number> <from> *****
+            const [numberToConvert, conversionFrom] = [args[0], args[1]]
+            assistantTextChannel.send(utilsConverter.convert(numberToConvert, conversionFrom))
+        }
     }
     
     /*else if (command === 'despacito'){
