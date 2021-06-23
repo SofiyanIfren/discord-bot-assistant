@@ -79,7 +79,7 @@ async function sendAdvice (){
 
 async function sendCurrencyChange (currencyFrom, currencyTo){
     let changeToSend = ''
-    await fetch('https://www.frankfurter.app//latest?from='+currencyFrom+'&to='+currencyTo)
+    await fetch('https://www.frankfurter.app/latest?from='+currencyFrom+'&to='+currencyTo)
         .then(res => res.json().then(curr => {
             let response = '1 '+currencyFrom.toUpperCase()+' = '
             for (var key in curr.rates) {
