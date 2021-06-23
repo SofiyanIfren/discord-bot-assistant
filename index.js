@@ -43,14 +43,14 @@ client.on('message', async message => {
         const proverbe = proverbes[Math.floor(Math.random() * proverbes.length)]
         assistantTextChannel.send(`${Object.keys(proverbe)[0]} - ${Object.values(proverbe)[0]}`)
     } else if (command === 'date' && args.length === 1) {       // ***** !date <format> *****
-        if (args[0] === 'hijri')        calendar.getHijriDate()
+        if (args[0] === 'hegire')        calendar.getHijriDate()
             .then(res => assistantTextChannel.send(res))
-        if (args[0] === 'gregorian')    calendar.getGregorianDate()
+        if (args[0] === 'gregoire')    calendar.getGregorianDate()
             .then(res => assistantTextChannel.send(res))
-    } else if (command === 'weather' && args.length === 1){     // ***** !weather <city_name> *****
+    } else if (command === 'meteo' && args.length === 1){       // ***** !meteo <nom_ville> *****
         const city = args[0].toLowerCase()
         weather.getCityWeather(city)
-            .then(res => assistantTextChannel.send('City of '+city+' : '+res))
+            .then(res => assistantTextChannel.send('Ville de '+city+' : '+res))
     } else if (command === 'wiki' && args.length === 2){        // ***** !wiki search/suggestions <word> *****
         if (args[0] === 'search')
             wiki.getWikiSuggestions(args[1])
@@ -58,31 +58,31 @@ client.on('message', async message => {
         if (args[0] === 'suggestions')
             wiki.getWikiSuggestions(args[1])
                 .then(res => assistantTextChannel.send(res[3]))
-    } else if (command === 'domains' && args.length === 1){     // ***** !domains <word> *****
+    } else if (command === 'domaine' && args.length === 1){     // ***** !domaine <mot> *****
         domains.getSuggestedDomains(args[0]).then((domainsData) => assistantTextChannel.send(domainsData.slice(0,-1)))
-    } else if (command === 'cat' && args.length === 0){         // ***** !cat  *****
+    } else if (command === 'chat' && args.length === 0){        // ***** !chat  *****
         fetch('https://thatcopy.pw/catapi/rest/')
             .then(res => res.json().then(cat => assistantTextChannel.send(cat.webpurl)))
     } else if (command === 'anime' && args.length === 0){       // ***** !anime *****
         anime.getRandomAnimeCitation()
             .then(citation => assistantTextChannel.send(citation))
-    } else if (command === 'number' && args.length === 0){      // ***** !number *****
+    } else if (command === 'nombre' && args.length === 0){      // ***** !nombre *****
         numbers.getRandomNumberFunFact()
             .then(fact => assistantTextChannel.send(fact))
-    } else if (command === 'number' && args.length === 1){      // ***** !number <given_number> *****
+    } else if (command === 'nombre' && args.length === 1){      // ***** !number <nombre> *****
         numbers.getNumberFunFact(args[0])
             .then(fact => assistantTextChannel.send(fact))
     } else if (command === 'convert'){
-        if (args.length === 3){                                 // ***** !convert <number> <from> <to>  *****
+        if (args.length === 3){                                 // ***** !convert <nombre> <origine> <destination>  *****
             const [numberToConvert, conversionFrom, conversionTo] = [args[0], args[1], args[2]]
             converter.convert(numberToConvert, conversionFrom, conversionTo)
                 .then(res => assistantTextChannel.send(res))
         }
-        if (args.length === 2){                                 // ***** !convert <number> <from> *****
+        if (args.length === 2){                                 // ***** !convert <nombre> <origine> *****
             const [numberToConvert, conversionFrom] = [args[0], args[1]]
             assistantTextChannel.send(utilsConverter.convert(numberToConvert, conversionFrom))
         }
-    } else if (command === 'trad' && args.length === 3){        // ***** !trad <word> <from> <to> *****
+    } else if (command === 'trad' && args.length === 3){        // ***** !trad <mot> <origine> <destination> *****
         translator.translate(args[0], args[1], args[2])
             .then((res) => assistantTextChannel.send(res.translatedText))
     } else if (command === 'advice' && args.length === 0){      // ***** !advice *****
