@@ -21,7 +21,7 @@ function convertFromCelsiusToFarenheit (celciusTemp){ return (celciusTemp*1.8)+3
 function convertFromFarenheitToCelsius (farenheitTemp){ return (farenheitTemp-32)/1.8 +' °C' }
 
 /***** CONVERSION **** */
-function convert(numberToConvert, conversionFrom){
+function convertUnits (numberToConvert, conversionFrom){
     let result = ''
 
     if (conversionFrom.toLowerCase() === 'gr')          result = convertFromGramme(numberToConvert)
@@ -41,6 +41,23 @@ function convert(numberToConvert, conversionFrom){
     return result
 }
 
+function convertNumbers (numberToConvert, conversionFrom, conversionTo){
+    let conversionFromFormat = ''
+    let conversionToFormat   = ''
+
+    if(conversionFrom === 'binary')            conversionFromFormat = 2
+    else if(conversionFrom === 'octal')        conversionFromFormat = 8
+    else if(conversionFrom === 'decimal')      conversionFromFormat = 10
+    else if(conversionFrom === 'hexadecimal')  conversionFromFormat = 16
+
+    if(conversionTo === 'binary')              conversionToFormat = 2
+    else if(conversionTo === 'octal')          conversionToFormat = 8
+    else if(conversionTo === 'decimal')        conversionToFormat = 10
+    else if(conversionTo === 'hexadecimal')    conversionToFormat = 16
+    
+    return parseInt(numberToConvert,conversionFromFormat).toString(conversionToFormat)
+}
+
 module.exports = {
     convertFromGramme,
     convertFromOunceToGramme,
@@ -55,5 +72,6 @@ module.exports = {
     convertFromMileToKilometre,
     convertFromCelsiusToFarenheit,
     convertFromFarenheitToCelsius,
-    convert
+    convertUnits,
+    convertNumbers
 }
