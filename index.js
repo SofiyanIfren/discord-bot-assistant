@@ -95,6 +95,15 @@ client.on('message', async message => {
             connection.play(await ytdl('https://www.youtube.com/watch?v=5qap5aO4i9A', { type: 'opus' }))
         if (args[0] === 'stop')
             voiceChannel.leave()
+    } else if (command === 'change' && args.length === 2){      // ***** !change <monnaie_origine> <monnaie_destination> *****
+        fetch('https://www.frankfurter.app//latest?from='+args[0]+'&to='+args[1]+'')
+            .then(res => res.json().then(curr => {
+                let response = '1 '+args[0].toUpperCase()+' = '
+                for (var key in curr.rates) {
+                    response += curr.rates[key]+' '+key
+                }
+                message.reply(response)
+            }))
     }
 })
 
