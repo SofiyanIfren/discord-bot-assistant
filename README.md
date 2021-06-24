@@ -7,16 +7,22 @@
 <code>npm init
 npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs/opus ytdl-core</code>
 
-* Créer un fichier config.json à la racine du projet
+* Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde.
 
 <code>{
     "BOT_TOKEN": "<DISCORD_BOT_TOKEN>",
+    "BOT_ID": "<DISCORD_BOT_TOKEN>",
+    "TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",
+    "VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",
     "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>"
 }</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
 
+### Gestion du serveur
+
 * <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service
+* <code>!invite <bot/user></code> Obtention d'un lien permettant d'inviter le bot sur son serveur (Option: bot) ou un lien d'invitation pour le serveur sur lequel le bot est actif
 
 ### Dev perso
 

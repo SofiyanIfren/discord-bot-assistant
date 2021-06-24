@@ -1,4 +1,4 @@
-const helpData          = require("../utils/help.js")
+const helpUtils         = require("../utils/help.js")
 const converterUtils    = require("../utils/utilsConverter.js")
 const proverbesData     = require("../data/proverbes.json")
 
@@ -7,8 +7,11 @@ function sendPong (message){
     return `pong! This message had a latency of ${timeTaken} ms.`
 }
 
-function sendHelp (){
-    return helpData
+function sendBasicHelp (){
+    return helpUtils.sendBasicHelp()
+}
+function sendSpecificHelp (argument){
+    return helpUtils.sendSpecificHelp(argument)
 }
 
 function sendProverbe (){
@@ -25,7 +28,8 @@ function sendConvertedUnitsNumbers (numberToConvert, conversionFrom){
 
 module.exports = {
     sendPong,
-    sendHelp,
+    sendBasicHelp,
+    sendSpecificHelp,
     sendProverbe,
     sendConvertedNumbers,
     sendConvertedUnitsNumbers,
