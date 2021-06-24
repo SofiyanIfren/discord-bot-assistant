@@ -1,9 +1,7 @@
-const PERSONNAL_ASSISTANT_CHANNEL_ID = '856796622583234601'
-const COWORKING_CHANNEL_ID           = '776491312814882867'
-
-const syncCommands   = require("./commands/syncCommands.js")
-const asyncCommands  = require("./commands/asyncCommands.js")
-const config         = require("./config.json")
+const syncCommands     = require("./commands/syncCommands.js")
+const asyncCommands    = require("./commands/asyncCommands.js")
+const discordCommands  = require("./commands/discordCommands.js")
+const config           = require("./config.json")
 
 const fetch    = require("node-fetch")
 const ytdl     = require('ytdl-core')
@@ -11,24 +9,31 @@ const Discord  = require("discord.js")
 const client   = new Discord.Client()
 
 const prefix = '!'
+var   assistantTextChannel  = ''
+var   coworkingVoiceChannel = ''
 
-client.on('ready', () => console.log('Hello World, I\'m awaken!')) // INIT  
+client.on('ready', () => console.log('*** Hello World, I\'m awake ! ***')) // INIT
 
 client.on('message', async message => {  // START 
-    if (message.author.bot) return // it's not a bot who's speaking
+    if (message.author.bot) return       // it's not a bot who's speaking
     if (!message.content.startsWith(prefix)) return
     
     const commandBody   = message.content.slice(prefix.length)
-    const args          = commandBody.split(' ') // tab === ['command', 'arg1', 'arg2', ...]
+    const args          = commandBody.split(' ')  // tab === ['command', 'arg1', 'arg2', ...]
     const command       = args.shift().toLowerCase()
+    
+    client.channels.cache.map(x => {if (x.name.includes(config.TEXT_CHANNEL))   assistantTextChannel  = client.channels.cache.get(x.id.toString())})
+    client.channels.cache.map(x => {if (x.name.includes(config.VOCAL_CHANNEL))  coworkingVoiceChannel = client.channels.cache.get(x.id.toString())})
 
-    const assistantTextChannel  = client.channels.cache.get(PERSONNAL_ASSISTANT_CHANNEL_ID)
-    const coworkingVoiceChannel = client.channels.cache.get(COWORKING_CHANNEL_ID)
-
-    if (command        === 'ping' && args.length === 0){               
+    if (command === 'invite' && args.length === 1){
+        if   (args[0] === 'server')   discordCommands.sendServerInvitation(message).then(invitation => assistantTextChannel.send(invitation))
+        else if (args[0] === 'bot')   assistantTextChannel.send(discordCommands.sendBotInvitation())
+    } else if (command === 'ping' && args.length === 0){               
         assistantTextChannel.send(syncCommands.sendPong(message))
     } else if (command === 'help' && args.length === 0){        
-        assistantTextChannel.send(syncCommands.sendHelp())
+        assistantTextChannel.send(syncCommands.sendBasicHelp())
+    } else if (command === 'help' && args.length === 1){        
+        assistantTextChannel.send(syncCommands.sendSpecificHelp(args[0]))
     } else if (command === 'proverbe' && args.length === 0){    
         assistantTextChannel.send(syncCommands.sendProverbe())
     } else if (command === 'convert' && args.length === 3){
