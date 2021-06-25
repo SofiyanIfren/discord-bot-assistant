@@ -1,14 +1,14 @@
 function sendBasicHelp (){
     return "utilisation: *** !help <argument> ***\n\nVoici une liste des arguments possibles:\n\n"
-        +"*** server *** (Gestion du serveur)\n"
-        +"*** perso  *** (Autour du développement personnel)\n"
+        +"*** server *** (UtilitairesGestion du serveur)\n"
+        +"*** perso  *** (UtilitairesAutour du développement personnel)\n"
         +"*** utils  *** (Utilitaires divers disponibles sur ce serveur)\n"
         +"*** money  *** (Commandes autour de la finance disponibles sur ce serveur)\n"
         +"*** info   *** (Commandes autour de l'informatique disponibles sur ce serveur)\n"
         +"*** text   *** (Commandes textuelles disponibles sur ce serveur)\n"
         +"*** math   *** (Commandes mathématiques disponibles sur ce serveur)\n"
         +"*** fun    *** (Commandes fun disponibles sur ce serveur)\n"
-        +"*** sound  *** (Commandes liées au son disponibles sur ce serveur)\n"
+        +"*** tweet  *** (Commandes du compte Twitter associé à ce serveur)\n"
 }
 
 function sendSpecificHelp (argument){
@@ -36,8 +36,8 @@ function sendSpecificHelp (argument){
     if (argument === 'fun')
         return "*** !chat *** \n --> Obtention d'une image de chat aléatoire\n"
             +"*** !anime *** \n --> Obtention d'une citation aléatoire d'anime, en anglais\n"
-    if (argument === 'sound')
-        return "*** !lofi <play/stop> *** \n --> Lance de la musique lofi dans l'espace de coworking (chanel vocal)\n"
+    if (argument === 'tweet')
+        return "*** !tweet <proverbe/advice> *** \n --> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter @umpt_officiel\n"
 }
 
 

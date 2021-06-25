@@ -5,16 +5,21 @@
 * Installation npm et packages nécessaires
 
 <code>npm init
-npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs/opus ytdl-core</code>
+npm i --save discord.js twit</code>
 
-* Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde.
+* Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
 
 <code>{
     "BOT_TOKEN": "<DISCORD_BOT_TOKEN>",
     "BOT_ID": "<DISCORD_BOT_TOKEN>",
     "TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",
     "VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",
-    "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>"
+    "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",
+    "TWITTER_API_KEY" : "API_KEY_TWITTER",
+    "TWITTER_API_KEY_SECRET" : "API_KEY_SECRET_TWITTER",
+    "TWITTER_ACCESS_TOKEN" : "ACCESS_TOKEN_TWITTER,
+    "TWITTER_ACCESS_TOKEN_SECRET" : "ACCESS_TOKEN_SECRET_TWITTER",
+    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!"
 }</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
@@ -26,7 +31,7 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 
 ### Dev perso
 
-* <code>!proverbe</code> Obtention d'un proverbe à léatoire parmi près de 2500 proverbes d'origine différentes
+* <code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes
 * <code>!advice</code> Obtention d'un conseil aléatoire (anglais)
 
 ### Utilitaires
@@ -61,7 +66,7 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 
 ### Ambiance Coworking
 
-* <code>!lofi <play/stop></code> Lance de la musique lofi dans l'espace de coworking (chanel vocal)
+* <code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
 
 ## Crédits - API utilisées
 
