@@ -5,7 +5,7 @@
 * Installation npm et packages nécessaires
 
 <code>npm init
-npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs/opus ytdl-core</code>
+npm i --save discord.js twit</code>
 
 * Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde.
 
@@ -26,7 +26,7 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 
 ### Dev perso
 
-* <code>!proverbe</code> Obtention d'un proverbe à léatoire parmi près de 2500 proverbes d'origine différentes
+* <code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes
 * <code>!advice</code> Obtention d'un conseil aléatoire (anglais)
 
 ### Utilitaires
@@ -61,7 +61,7 @@ npm i --save  discord.js ytdl-core ffmpeg fluent-ffmpeg ffmpeg-static @discordjs
 
 ### Ambiance Coworking
 
-* <code>!lofi <play/stop></code> Lance de la musique lofi dans l'espace de coworking (chanel vocal)
+* <code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
 
 ## Crédits - API utilisées
 
