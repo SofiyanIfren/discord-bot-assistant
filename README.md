@@ -38,7 +38,7 @@ npm i --save discord.js twit</code>
 ### Utilitaires
 
 * <code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)
-* <code>!weather <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
+* <code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
 * <code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
 
 ### Finances

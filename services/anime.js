@@ -4,7 +4,13 @@ async function getRandomAnimeCitation () {
     let result = ''
     await fetch('https://animechan.vercel.app/api/random')
         .then(data => data.json())
-        .then(res => result = '"' + res.quote +'" ('+res.character+', in '+res.anime+')')
+        .then(res => {
+            result = {
+                quote : res.quote,
+                character : res.character,
+                anime : res.anime
+            }
+        })
     return result
 }
 

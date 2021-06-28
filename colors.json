@@ -1,0 +1,11 @@
+{
+    "SERVER_COLOR" : "#eb1006",
+    "PERSO_COLOR"  : "#ffea22",
+    "UTILS_COLOR"  : "#f85d08",
+    "MONEY_COLOR"  : "#a1d010",
+    "INFO_COLOR"   : "#207f1b",
+    "TEXT_COLOR"   : "#0000d3",
+    "MATH_COLOR"   : "#4d2677",
+    "FUN_COLOR"    : "#9e0054",
+    "TWEET_COLOR"  : "#0077f6"
+}
