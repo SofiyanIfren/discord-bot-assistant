@@ -1,5 +1,6 @@
+const Discord           = require("discord.js")
+const colors            = require("../colors.json")
 const fetch             = require("node-fetch")
-
 const calendarService   = require("../services/calendar")
 const weatherService    = require("../services/weather.js")
 const wikiService       = require("../services/wiki.js")
@@ -14,14 +15,16 @@ async function sendDate (calendarParam){
         await calendarService.getHijriDate().then(res => date = res)
     if (calendarParam === 'gregoire')    
         await calendarService.getGregorianDate().then(res => date = res)
-    return date
+    return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
+        .setTitle('Date du jour').setDescription(date)
 }
 
 async function sendWeather (city){
     let weatherInfo = ''
     await weatherService.getCityWeather(city.toLowerCase())
-        .then(res => weatherInfo = 'Ville de '+city+' : '+res)
-    return weatherInfo
+        .then(res => weatherInfo = res)
+    return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
+        .setTitle(city).setDescription(weatherInfo)
 }
 
 async function sendWikiResponse (typeArg, word){
@@ -30,51 +33,60 @@ async function sendWikiResponse (typeArg, word){
         await wikiService.getWikiSuggestions(word).then(res => response = res[3][0])
     if (typeArg === 'suggestions')
         await wikiService.getWikiSuggestions(word).then(res => response = res[3])
-    return response
+    return new Discord.MessageEmbed().setColor(colors.TEXT_COLOR)
+        .setDescription(response)
 }
 
 async function sendDomainsData (word){
     let domains = []
     await domainService.getSuggestedDomains(word)
         .then((domainsData) => domains = domainsData.slice(0,-1))
-    return domains
+    return new Discord.MessageEmbed().setColor(colors.INFO_COLOR)
+        .setTitle('Domaines Internet').setDescription(domains)
 }
 
 async function sendAnimeCitation (){
     let citationAnime = ''
-    await animeService.getRandomAnimeCitation().then(citation => citationAnime = citation)
-    return citationAnime
+    await animeService.getRandomAnimeCitation().then(citationInfos => citationAnime = citationInfos)
+    return new Discord.MessageEmbed().setColor(colors.FUN_COLOR)
+        .setAuthor(citationAnime.anime).setDescription(citationAnime.quote)
+        .setFooter(citationAnime.character)
 }
 
 async function sendCat (){
     let catUrl = ''
     await fetch('https://thatcopy.pw/catapi/rest/')
         .then(res => res.json().then(cat => catUrl = cat.webpurl))
-    return catUrl
+    return new Discord.MessageEmbed().setColor(colors.FUN_COLOR)
+        .setImage(catUrl)
 }
 
 async function sendRandomNumberFunFact (){
     let funFact = ''
     await numberService.getRandomNumberFunFact().then(fact => funFact = fact)
-    return funFact
+    return new Discord.MessageEmbed().setColor(colors.MATH_COLOR)
+        .setTitle('Number Info').setDescription(funFact)
 }
 async function sendNumberFunFact (number){
     let funFact = ''
     await numberService.getNumberFunFact(number).then(fact => funFact = fact)
-    return funFact
+    return new Discord.MessageEmbed().setColor(colors.MATH_COLOR)
+        .setTitle('Number Info').setDescription(funFact)
 }
 
 async function sendTranslatedWord (word, originalLanguage, finalLanguage){
     let translatedWord = ''
     await translatorService.translate(word, originalLanguage, finalLanguage).then(res => translatedWord = res.translatedText)
-    return translatedWord
+    return new Discord.MessageEmbed().setColor(colors.TEXT_COLOR)
+        .setTitle('Traduction '+originalLanguage+' / '+finalLanguage).addField(translatedWord, word)
 }
 
 async function sendAdvice (){
     let advice = ''
     await fetch('https://api.adviceslip.com/advice').then(res => res.json()
         .then(res => advice = res.slip.advice))
-    return advice
+    return new Discord.MessageEmbed().setColor(colors.PERSO_COLOR)
+        .setTitle('Life advice').setDescription(advice)
 }
 
 async function sendCurrencyChange (currencyFrom, currencyTo){
@@ -88,7 +100,8 @@ async function sendCurrencyChange (currencyFrom, currencyTo){
             changeToSend = response
         })
     )
-    return changeToSend
+    return new Discord.MessageEmbed().setColor(colors.MONEY_COLOR)
+        .setTitle('Conversion monnaie').setDescription(changeToSend)
 }
 
 module.exports = {

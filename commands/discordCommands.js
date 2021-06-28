@@ -7,7 +7,7 @@ function sendBotInvitation (){
 async function sendServerInvitation (message){
     let invitation = ''
     await message.channel.createInvite()
-        .then(invite =>  invitation = `Votre lien d'invitation : \n\nhttps://discord.gg/${invite.code}`)
+        .then(invite =>  invitation = `https://discord.gg/${invite.code}`)
     return invitation
 }
 

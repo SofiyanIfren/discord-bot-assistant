@@ -4,12 +4,11 @@ const discordCommands  = require("./commands/discordCommands.js")
 const twitterCommands  = require("./commands/twitterCommands.js")
 const config           = require("./config.json")
 
-const fetch    = require("node-fetch")
 const ytdl     = require('ytdl-core')
 const Discord  = require("discord.js")
 const client   = new Discord.Client()
 
-const prefix = '!'
+const prefix                = '!'
 var   assistantTextChannel  = ''
 var   coworkingVoiceChannel = ''
 
@@ -77,7 +76,9 @@ client.on('message', async message => {  // START
                 .then(changeInfos => assistantTextChannel.send(changeInfos))
         } else if (command === 'tweet' && args.length === 1){
             twitterCommands.sendTextTweet(args[0], 'by '+message.author.username)
-            assistantTextChannel.send('** Tweet sent by '+message.author.username+' **')
+            assistantTextChannel.send(twitterCommands.sendTweetConfirmation(message.author.username))
+        } else if (command === 'embed') {
+            message.reply(embeds.getEmbed())
         } else {
             message.reply(config.BOT_MESSAGE_INVALID_COMMAND)
         }
@@ -85,6 +86,5 @@ client.on('message', async message => {  // START
         message.reply(config.BOT_MESSAGE_USE_THE_RIGHT_CHANNEL)
     }
 })
-
 
 client.login(config.BOT_TOKEN) // LAUNCH BOT

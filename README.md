@@ -10,16 +10,17 @@ npm i --save discord.js twit</code>
 * Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
 
 <code>{
-    "BOT_TOKEN": "<DISCORD_BOT_TOKEN>",
-    "BOT_ID": "<DISCORD_BOT_TOKEN>",
-    "TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",
-    "VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",
-    "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",
-    "TWITTER_API_KEY" : "API_KEY_TWITTER",
-    "TWITTER_API_KEY_SECRET" : "API_KEY_SECRET_TWITTER",
-    "TWITTER_ACCESS_TOKEN" : "ACCESS_TOKEN_TWITTER,
-    "TWITTER_ACCESS_TOKEN_SECRET" : "ACCESS_TOKEN_SECRET_TWITTER",
-    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!"
+    "BOT_TOKEN": "<DISCORD_BOT_TOKEN>",<br/>
+    "BOT_ID": "<DISCORD_BOT_TOKEN>",<br/>
+    "TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",<br/>
+    "VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",<br/>
+    "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",<br/>
+    "TWITTER_API_KEY" : "<API_KEY_TWITTER>",<br/>
+    "TWITTER_API_KEY_SECRET" : "<API_KEY_SECRET_TWITTER>",<br/>
+    "TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",<br/>
+    "TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",<br/>
+    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "<Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!>",<br/>
+    "BOT_MESSAGE_INVALID_COMMAND" : "<Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***>"
 }</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
@@ -37,7 +38,7 @@ npm i --save discord.js twit</code>
 ### Utilitaires
 
 * <code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)
-* <code>!weather <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
+* <code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
 * <code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
 
 ### Finances
