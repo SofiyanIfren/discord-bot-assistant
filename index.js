@@ -23,8 +23,14 @@ client.on('message', async message => {  // START
     const args          = commandBody.split(' ')  // tab === ['command', 'arg1', 'arg2', ...]
     const command       = args.shift().toLowerCase()
     
-    client.channels.cache.map(x => {if (x.name.includes(config.TEXT_CHANNEL))   assistantTextChannel  = client.channels.cache.get(x.id.toString())})
-    client.channels.cache.map(x => {if (x.name.includes(config.VOCAL_CHANNEL))  coworkingVoiceChannel = client.channels.cache.get(x.id.toString())})
+    message.guild.channels.cache.map(x => {
+        if (x.name.includes(config.TEXT_CHANNEL))
+            assistantTextChannel  = message.guild.channels.cache.get(x.id.toString())
+    })
+    message.guild.channels.cache.map(x => {
+        if (x.name.includes(config.VOCAL_CHANNEL))
+            coworkingVoiceChannel = message.guild.channels.cache.get(x.id.toString())
+    })
 
     if (message.channel.id === assistantTextChannel.id){
         if (command === 'invite' && args.length === 1){
@@ -72,6 +78,8 @@ client.on('message', async message => {  // START
         } else if (command === 'tweet' && args.length === 1){
             twitterCommands.sendTextTweet(args[0], 'by '+message.author.username)
             assistantTextChannel.send('** Tweet sent by '+message.author.username+' **')
+        } else {
+            message.reply(config.BOT_MESSAGE_INVALID_COMMAND)
         }
     } else {
         message.reply(config.BOT_MESSAGE_USE_THE_RIGHT_CHANNEL)
