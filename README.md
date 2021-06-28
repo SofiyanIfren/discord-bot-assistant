@@ -19,7 +19,8 @@ npm i --save discord.js twit</code>
     "TWITTER_API_KEY_SECRET" : "<API_KEY_SECRET_TWITTER>",<br/>
     "TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",<br/>
     "TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",<br/>
-    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "<Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!>"
+    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "<Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!>",<br/>
+    "BOT_MESSAGE_INVALID_COMMAND" : "<Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***>"
 }</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
