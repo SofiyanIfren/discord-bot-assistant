@@ -19,7 +19,7 @@ npm i --save discord.js twit</code>
 * Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
 
 <code>{"BOT_TOKEN": "<DISCORD_BOT_TOKEN>",</code><br>
-<code>"BOT_ID": "<DISCORD_BOT_TOKEN>",</code><br>
+<code>"BOT_ID": "<DISCORD_BOT_ID>",</code><br>
 <code>"TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",</code><br>
 <code>"VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",</code><br>
 <code>"WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",</code><br>
