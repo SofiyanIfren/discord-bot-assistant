@@ -4,6 +4,8 @@
 [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]()
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 > Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
