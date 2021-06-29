@@ -16,7 +16,11 @@
 <code>npm init
 npm i --save discord.js twit</code>
 
-* Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
+Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires
+
+* Pour l'obtention des clefs d'API et des codes d'authentification spécifiques aux API externes, voir les URL dans les crédits ci-dessous 
+* TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde
+* Les messages d'erreur renvoyés par le BOT sont paramétrables à souhait
 
 <code>{"BOT_TOKEN": "<DISCORD_BOT_TOKEN>",</code><br>
 <code>"BOT_ID": "<DISCORD_BOT_ID>",</code><br>
@@ -34,47 +38,46 @@ npm i --save discord.js twit</code>
 
 ### Gestion du serveur
 
-* <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service
-* <code>!invite <bot/user></code> Obtention d'un lien permettant d'inviter le bot sur son serveur (Option: bot) ou un lien d'invitation pour le serveur sur lequel le bot est actif
+<code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service
+<code>!invite <bot/user></code> Obtention d'un lien permettant d'inviter le bot sur son serveur (Option: bot) ou un lien d'invitation pour le serveur sur lequel le bot est actif
 
 ### Dev perso
 
-* <code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes
-* <code>!advice</code> Obtention d'un conseil aléatoire (anglais)
+<code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes
+<code>!advice</code> Obtention d'un conseil aléatoire (anglais)
 
 ### Utilitaires
 
-* <code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)
-* <code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
-* <code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
+<code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)
+<code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F
+<code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
 
 ### Finances
 
-* <code>!change <monnaie_origine> <monnaie_destination></code> Conversion (cours du jour) d'une monnaie donnée dans une monnaie d'arrivée (Options : sigles monétaires, tels USD, GBP, EUR,...
+<code>!change <monnaie_origine> <monnaie_destination></code> Conversion (cours du jour) d'une monnaie donnée dans une monnaie d'arrivée (Options : sigles monétaires, tels USD, GBP, EUR,...
 
 ### Informatique
 
-* <code>!domaine <mot></code> Obtention d'une liste de domaines suggérée en fonction d'un mot donné
+<code>!domaine <mot></code> Obtention d'une liste de domaines suggérée en fonction d'un mot donné
 
 ### Recherche texte
 
-* <code>!wiki <search/suggestions> <mot></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché
-* <code>!trad <mot> <origine> <destination></code> Traduction d'un mot d'une langue à une autre (Options : fr / en / ar / zh / de / hi / id / ga / it / ja / ko / pl / pt / ru / tr / vi / es)
+<code>!wiki <search/suggestions> <mot></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché
+<code>!trad <mot> <origine> <destination></code> Traduction d'un mot d'une langue à une autre (Options : fr / en / ar / zh / de / hi / id / ga / it / ja / ko / pl / pt / ru / tr / vi / es)
 
 ### Maths
 
-* <code>!nombre <nombre></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )
-* <code>!convert <nombre> <origine> <destination></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
-
+<code>!nombre <nombre></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )
+<code>!convert <nombre> <origine> <destination></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 
 ### Fun
 
-* <code>!anime</code> Obtention d'une citation aléatoire d'anime, en anglais
-* <code>!chat</code> Obtention d'une image de chat aléatoire
+<code>!anime</code> Obtention d'une citation aléatoire d'anime, en anglais
+<code>!chat</code> Obtention d'une image de chat aléatoire
 
 ### Ambiance Coworking
 
-* <code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
+<code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
 
 ## Contributions
 
