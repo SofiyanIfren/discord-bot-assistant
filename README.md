@@ -82,7 +82,7 @@ N'hésitez pas à contribuer en ouvrant une PR directement sur la branche DEV, e
 
 Si vous souhaitez supporter le projet, c'est par ici : <br/><br/>
   
-<p align=center>[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)</p>
+<div align=center>[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)</div>
   
 ## Crédits - API utilisées
 
