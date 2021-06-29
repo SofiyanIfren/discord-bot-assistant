@@ -1,4 +1,8 @@
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Assistant Personnel" src="https://cdn.discordapp.com/app-icons/520534231387078676/b046d7be3da8850247f3babf4657b1e1.png?size=256"> 
+
 # Assistant Personnel - Bot Discord
+
+> Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
 ## Assistant Personnel - Guide d'installation
 
