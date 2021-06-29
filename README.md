@@ -9,7 +9,7 @@
 
 > Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
-### Assistant Personnel - Guide d'installation
+### Guide d'installation
 
 * Installation npm et packages nécessaires
 
@@ -34,7 +34,7 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 <code>"BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!",</code><br>
 <code>"BOT_MESSAGE_INVALID_COMMAND" : "Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***"}</code>
 
-## Assistant Personnel - Liste des fonctionnalités
+### Liste des fonctionnalités
 
 #### Gestion du serveur
 <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service<br/>
