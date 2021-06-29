@@ -16,8 +16,7 @@ npm i --save discord.js twit</code>
 
 * Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
 
-<code>{</code><br>
-<code>"BOT_TOKEN": "<DISCORD_BOT_TOKEN>",</code><br>
+<code>{"BOT_TOKEN": "<DISCORD_BOT_TOKEN>",</code><br>
 <code>"BOT_ID": "<DISCORD_BOT_TOKEN>",</code><br>
 <code>"TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",</code><br>
 <code>"VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",</code><br>
@@ -27,8 +26,7 @@ npm i --save discord.js twit</code>
 <code>"TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",</code><br>
 <code>"TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",</code><br>
 <code>"BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!",</code><br>
-<code>"BOT_MESSAGE_INVALID_COMMAND" : "Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***"</code><br>
-<code>}</code>
+<code>"BOT_MESSAGE_INVALID_COMMAND" : "Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***"}</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
 
