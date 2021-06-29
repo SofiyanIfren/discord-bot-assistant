@@ -1,4 +1,13 @@
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Assistant Personnel" src="https://cdn.discordapp.com/app-icons/520534231387078676/b046d7be3da8850247f3babf4657b1e1.png?size=256"> 
+
 # Assistant Personnel - Bot Discord
+[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]()
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+
+> Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
 ## Assistant Personnel - Guide d'installation
 
@@ -9,19 +18,17 @@ npm i --save discord.js twit</code>
 
 * Créer un fichier config.json à la racine du projet et y ajouter les informations nécessaires. Pour l'obtention des clefs d'API, voir les url dans les crédits ci-dessous. TEXT_CHANNEL_NAME et VOCAL_CHANNEL_NAME sont à remplacer respectivement par le nom des chaînes sur lesquels vous souhaitez que le bot réponde. Il en est de même pour les clés d'accès Twitter. Le dernier message, lui, est paramétrable à souhait.
 
-<code>{
-    "BOT_TOKEN": "<DISCORD_BOT_TOKEN>",<br/>
-    "BOT_ID": "<DISCORD_BOT_TOKEN>",<br/>
-    "TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",<br/>
-    "VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",<br/>
-    "WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",<br/>
-    "TWITTER_API_KEY" : "<API_KEY_TWITTER>",<br/>
-    "TWITTER_API_KEY_SECRET" : "<API_KEY_SECRET_TWITTER>",<br/>
-    "TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",<br/>
-    "TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",<br/>
-    "BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "<Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!>",<br/>
-    "BOT_MESSAGE_INVALID_COMMAND" : "<Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***>"
-}</code>
+<code>{"BOT_TOKEN": "<DISCORD_BOT_TOKEN>",</code><br>
+<code>"BOT_ID": "<DISCORD_BOT_TOKEN>",</code><br>
+<code>"TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",</code><br>
+<code>"VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",</code><br>
+<code>"WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",</code><br>
+<code>"TWITTER_API_KEY" : "<API_KEY_TWITTER>",</code><br>
+<code>"TWITTER_API_KEY_SECRET" : "<API_KEY_SECRET_TWITTER>",</code><br>
+<code>"TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",</code><br>
+<code>"TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",</code><br>
+<code>"BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!",</code><br>
+<code>"BOT_MESSAGE_INVALID_COMMAND" : "Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***"}</code>
 
 ## Assistant Personnel - Liste des fonctionnalités
 
