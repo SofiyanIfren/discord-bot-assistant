@@ -81,7 +81,8 @@ npm i --save discord.js twit</code>
 N'hésitez pas à contribuer en ouvrant une PR directement sur la branche DEV, elle sera examinée le plus rapidement possible !
 
 Si vous souhaitez supporter le projet, c'est par ici : <br/><br/>
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)
+  
+<p align=center>[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)</p>
   
 ## Crédits - API utilisées
 
