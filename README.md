@@ -9,7 +9,7 @@
 
 > Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
-## Assistant Personnel - Guide d'installation
+h2. Assistant Personnel - Guide d'installation
 
 * Installation npm et packages nécessaires
 
