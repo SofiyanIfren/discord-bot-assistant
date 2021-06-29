@@ -21,8 +21,12 @@ async function sendDate (calendarParam){
 
 async function sendWeather (city){
     let weatherInfo = ''
-    await weatherService.getCityWeather(city.toLowerCase())
-        .then(res => weatherInfo = res)
+    try {
+        await weatherService.getCityWeather(city.toLowerCase())
+            .then(res => weatherInfo = res)
+    } catch (error){
+        weatherInfo = 'Ville non trouvée !'
+    }
     return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
         .setTitle(city).setDescription(weatherInfo)
 }
