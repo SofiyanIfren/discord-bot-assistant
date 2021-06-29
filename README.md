@@ -3,7 +3,7 @@
 # Assistant Personnel - Bot Discord
 [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/)
+[![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/JfAV834G)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]()
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
@@ -76,6 +76,12 @@ npm i --save discord.js twit</code>
 
 * <code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
 
+## Contributions
+
+N'hésitez pas à contribuer en ouvrant une PR directement sur la branche DEV, elle sera examinée le plus rapidement possible !
+
+Si vous souhaitez supporter le projet, c'est par ici : https://paypal.me/sofiyanifren?locale.x=fr_FR
+  
 ## Crédits - API utilisées
 
 * https://animechan.vercel.app/api
@@ -88,4 +94,3 @@ npm i --save discord.js twit</code>
 * https://thatcopy.pw/catapi/rest/
 * https://api.adviceslip.com/advice
 * https://www.frankfurter.app/
-
