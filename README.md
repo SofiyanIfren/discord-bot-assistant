@@ -9,7 +9,7 @@
 
 > Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
-h2. Assistant Personnel - Guide d'installation
+### Assistant Personnel - Guide d'installation
 
 * Installation npm et packages nécessaires
 
@@ -36,47 +36,38 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 
 ## Assistant Personnel - Liste des fonctionnalités
 
-### Gestion du serveur
-
+#### Gestion du serveur
 <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service<br/>
 <code>!invite <bot/user></code> Obtention d'un lien permettant d'inviter le bot sur son serveur (Option: bot) ou un lien d'invitation pour le serveur sur lequel le bot est actif
 
-### Dev perso
-
+#### Dev perso
 <code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes<br/>
 <code>!advice</code> Obtention d'un conseil aléatoire (anglais)
 
-### Utilitaires
-
+#### Utilitaires
 <code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)<br/>
 <code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F<br/>
 <code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
 
-### Finances
-
+#### Finances
 <code>!change <monnaie_origine> <monnaie_destination></code> Conversion (cours du jour) d'une monnaie donnée dans une monnaie d'arrivée (Options : sigles monétaires, tels USD, GBP, EUR,...
 
-### Informatique
-
+#### Informatique
 <code>!domaine <mot></code> Obtention d'une liste de domaines suggérée en fonction d'un mot donné<br/>
 
-### Recherche texte
-
+#### Recherche texte
 <code>!wiki <search/suggestions> <mot></code> Obtention du lien de recherche (Option: search) ou des suggestions Wikipedia (Option: suggestions) pour un mot donné. NB. Pour le moment, le service ne fonctionne qu'avec un seul mot recherché<br/>
 <code>!trad <mot> <origine> <destination></code> Traduction d'un mot d'une langue à une autre (Options : fr / en / ar / zh / de / hi / id / ga / it / ja / ko / pl / pt / ru / tr / vi / es)
 
-### Maths
-
+#### Maths
 <code>!nombre <nombre></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )<br/>
 <code>!convert <nombre> <origine> <destination></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 
-### Fun
-
+#### Fun
 <code>!anime</code> Obtention d'une citation aléatoire d'anime, en anglais<br/>
 <code>!chat</code> Obtention d'une image de chat aléatoire
 
-### Ambiance Coworking
-
+#### Ambiance Coworking
 <code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
 
 ## Contributions
