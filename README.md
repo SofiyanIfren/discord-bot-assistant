@@ -5,8 +5,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Discord Chat](https://img.shields.io/discord/308323056592486420.svg)](https://discord.gg/JfAV834G)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]()
-[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)<br/>
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 > Vous êtes libre d'ajouter une étoile ⭐ pour promouvoir le projet ! ^^
 
@@ -81,7 +80,8 @@ npm i --save discord.js twit</code>
 
 N'hésitez pas à contribuer en ouvrant une PR directement sur la branche DEV, elle sera examinée le plus rapidement possible !
 
-Si vous souhaitez supporter le projet, c'est par ici : https://paypal.me/sofiyanifren?locale.x=fr_FR
+Si vous souhaitez supporter le projet, c'est par ici : <br/>
+[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/sofiyanifren?locale.x=fr_FR)
   
 ## Crédits - API utilisées
 
