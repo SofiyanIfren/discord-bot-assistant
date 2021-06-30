@@ -16,7 +16,7 @@ async function sendDate (calendarParam){
     if (calendarParam === 'gregoire')    
         await calendarService.getGregorianDate().then(res => date = res)
     return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
-        .setTitle('Date du jour').setDescription(date)
+        .setTitle('⏰  Date du jour').setDescription(date)
 }
 
 async function sendWeather (city){
@@ -28,7 +28,7 @@ async function sendWeather (city){
         weatherInfo = 'Ville non trouvée !'
     }
     return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
-        .setTitle(city).setDescription(weatherInfo)
+        .setTitle('🏢  '+city).setDescription(weatherInfo)
 }
 
 async function sendWikiResponse (typeArg, word){
@@ -38,7 +38,7 @@ async function sendWikiResponse (typeArg, word){
     if (typeArg === 'suggestions')
         await wikiService.getWikiSuggestions(word).then(res => response = res[3])
     return new Discord.MessageEmbed().setColor(colors.TEXT_COLOR)
-        .setDescription(response)
+        .setTitle('🔎  Wikipédia').setDescription(response)
 }
 
 async function sendDomainsData (word){
@@ -46,14 +46,14 @@ async function sendDomainsData (word){
     await domainService.getSuggestedDomains(word)
         .then((domainsData) => domains = domainsData.slice(0,-1))
     return new Discord.MessageEmbed().setColor(colors.INFO_COLOR)
-        .setTitle('Domaines Internet').setDescription(domains)
+        .setTitle('🌍  Domaines Internet').setDescription(domains)
 }
 
 async function sendAnimeCitation (){
     let citationAnime = ''
     await animeService.getRandomAnimeCitation().then(citationInfos => citationAnime = citationInfos)
     return new Discord.MessageEmbed().setColor(colors.FUN_COLOR)
-        .setAuthor(citationAnime.anime).setDescription(citationAnime.quote)
+        .setAuthor('⛩  '+citationAnime.anime).setDescription(citationAnime.quote)
         .setFooter(citationAnime.character)
 }
 
@@ -69,20 +69,20 @@ async function sendRandomNumberFunFact (){
     let funFact = ''
     await numberService.getRandomNumberFunFact().then(fact => funFact = fact)
     return new Discord.MessageEmbed().setColor(colors.MATH_COLOR)
-        .setTitle('Number Info').setDescription(funFact)
+        .setTitle('⚠  Number Info').setDescription(funFact)
 }
 async function sendNumberFunFact (number){
     let funFact = ''
     await numberService.getNumberFunFact(number).then(fact => funFact = fact)
     return new Discord.MessageEmbed().setColor(colors.MATH_COLOR)
-        .setTitle('Number Info').setDescription(funFact)
+        .setTitle('⚠  Number Info').setDescription(funFact)
 }
 
 async function sendTranslatedWord (word, originalLanguage, finalLanguage){
     let translatedWord = ''
     await translatorService.translate(word, originalLanguage, finalLanguage).then(res => translatedWord = res.translatedText)
     return new Discord.MessageEmbed().setColor(colors.TEXT_COLOR)
-        .setTitle('Traduction '+originalLanguage+' / '+finalLanguage).addField(translatedWord, word)
+        .setTitle('📜  Traduction '+originalLanguage+' / '+finalLanguage).addField(translatedWord, word)
 }
 
 async function sendAdvice (){
@@ -90,7 +90,7 @@ async function sendAdvice (){
     await fetch('https://api.adviceslip.com/advice').then(res => res.json()
         .then(res => advice = res.slip.advice))
     return new Discord.MessageEmbed().setColor(colors.PERSO_COLOR)
-        .setTitle('Life advice').setDescription(advice)
+        .setTitle('💊  Life advice').setDescription(advice)
 }
 
 async function sendCurrencyChange (currencyFrom, currencyTo){
@@ -105,7 +105,7 @@ async function sendCurrencyChange (currencyFrom, currencyTo){
         })
     )
     return new Discord.MessageEmbed().setColor(colors.MONEY_COLOR)
-        .setTitle('Conversion monnaie').setDescription(changeToSend)
+        .setTitle('💵  Conversion monnaie').setDescription(changeToSend)
 }
 
 module.exports = {

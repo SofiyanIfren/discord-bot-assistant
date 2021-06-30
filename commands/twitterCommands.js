@@ -14,7 +14,7 @@ function sendTextTweet(argument, userSignature){
 
 function sendTweetConfirmation(user){
     return new Discord.MessageEmbed().setColor(colors.TWEET_COLOR)
-        .setDescription('** Tweet envoyé par '+user+' **')
+        .setDescription('🚀  ** Tweet envoyé par '+user+' **')
 }
 
 module.exports = {
