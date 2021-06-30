@@ -39,6 +39,7 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 #### Gestion du serveur
 <code>!ping</code> Obtention d'un retour avec temps de latence, permet de tester le service<br/>
 <code>!invite <bot/user></code> Obtention d'un lien permettant d'inviter le bot sur son serveur (Option: bot) ou un lien d'invitation pour le serveur sur lequel le bot est actif
+<code>!question <question/proposition1+proposition2+...>'Permet de créer un sondage simple sans options, ou avec des choix multiples (Options : choix séparées par un signe +'
 
 #### Dev perso
 <code>!proverbe</code> Obtention d'un proverbe aléatoire parmi près de 2500 proverbes d'origine différentes<br/>
