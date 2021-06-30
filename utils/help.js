@@ -16,7 +16,8 @@ function sendSpecificHelp (argument){
     if (argument === 'server')
         return [
             { name: 'ping', value: 'Obtention d\'un retour avec temps de latence, permet de tester le service' },
-            { name: 'invite <bot/user>', value: 'Obtention d\'un lien permettant d\'inviter le bot sur son serveur (Option: bot) ou un lien d\'invitation pour le serveur sur lequel le bot est actif' }
+            { name: 'invite <bot/user>', value: 'Obtention d\'un lien permettant d\'inviter le bot sur son serveur (Option: bot) ou un lien d\'invitation pour le serveur sur lequel le bot est actif' },
+            { name: 'question <question/proposition1 + proposition2 +...>', value: 'Permet de créer un sondage simple sans options, ou avec des choix multiples (Options : choix séparées par un signe +' }
         ]
     else if (argument === 'perso')
         return [
