@@ -7,7 +7,7 @@ const proverbesData     = require("../data/proverbes.json")
 function sendPong (message){
     const timeTaken = Date.now() - message.createdTimestamp 
     return new Discord.MessageEmbed().setColor(colors.SERVER_COLOR)
-        .setTitle('Pong !').setDescription(`❗  This message had a latency of ${timeTaken} ms`)
+        .setTitle('❗  Pong  ❗').setDescription(`This message had a latency of ${timeTaken} ms`)
 }
 
 function sendBasicHelp (){
