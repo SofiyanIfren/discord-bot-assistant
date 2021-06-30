@@ -79,6 +79,9 @@ client.on('message', async message => {  // START
             assistantTextChannel.send(twitterCommands.sendTweetConfirmation(message.author.username))
         } else if (command === 'embed') {
             message.reply(embeds.getEmbed())
+        } else if (command === 'question' && args.length > 0) {
+            const allArgs = args.join(' ')
+            assistantTextChannel.send(syncCommands.sendPoll(allArgs))
         } else {
             message.reply(config.BOT_MESSAGE_INVALID_COMMAND)
         }
