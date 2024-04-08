@@ -16,6 +16,8 @@ client.on('ready', () => console.log('*** Hello World, I\'m awake ! ***')) // IN
 client.on('message', async message => {  // START 
     if (message.author.bot) return       // it's not a bot who's speaking
     if (!message.content.startsWith(prefix)) return
+    console.log(message.channel)
+    if (message.channel.type.toLowerCase() === 'dm') return
     
     const commandBody   = message.content.slice(prefix.length)
     const args          = commandBody.split(' ')  // tab === ['command', 'arg1', 'arg2', ...]
