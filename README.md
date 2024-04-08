@@ -26,11 +26,6 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 <code>"BOT_ID": "<DISCORD_BOT_ID>",</code><br>
 <code>"TEXT_CHANNEL": "<TEXT_CHANNEL_NAME>",</code><br>
 <code>"VOCAL_CHANNEL": "<VOCAL_CHANNEL_NAME>",</code><br>
-<code>"WEATHER_API_KEY": "<API_KEY_OPENWEATHERMAP>",</code><br>
-<code>"TWITTER_API_KEY" : "<API_KEY_TWITTER>",</code><br>
-<code>"TWITTER_API_KEY_SECRET" : "<API_KEY_SECRET_TWITTER>",</code><br>
-<code>"TWITTER_ACCESS_TOKEN" : "<ACCESS_TOKEN_TWITTER>",</code><br>
-<code>"TWITTER_ACCESS_TOKEN_SECRET" : "<ACCESS_TOKEN_SECRET_TWITTER>",</code><br>
 <code>"BOT_MESSAGE_USE_THE_RIGHT_CHANNEL" : "Hello! Je ne réponds qu'aux commandes envoyées sur mon espace de discussion attitré!",</code><br>
 <code>"BOT_MESSAGE_INVALID_COMMAND" : "Aïe! Je ne connais pas cette commande. Pour le détails des commandes, tepe *** !help ***"}</code>
 
@@ -64,13 +59,6 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 <code>!nombre <nombre></code> Obtention d'un fait aléatoire à propos d'un nombre donné, en anglais (Si aucun nombre n'est donné, un fait est donné à propos d'un nombre aléatoire )<br/>
 <code>!convert <nombre> <origine> <destination></code> Conversion d'un nombre (Options : binary / octal / decimal / hexadecimal)
 
-#### Fun
-<code>!anime</code> Obtention d'une citation aléatoire d'anime, en anglais<br/>
-<code>!chat</code> Obtention d'une image de chat aléatoire
-
-#### Ambiance Coworking
-<code>!tweet <proverbe/advice></code> Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé au serveur
-
 ## Contributions
 
 N'hésitez pas à contribuer en ouvrant une PR directement sur la branche DEV, elle sera examinée le plus rapidement possible !
@@ -81,12 +69,10 @@ Si vous souhaitez supporter le projet, c'est par ici : <br/>
   
 ## Crédits - API utilisées
 
-* https://animechan.vercel.app/api
 * http://api.aladhan.com/v1
 * https://api.domainsdb.info/v1
 * http://numbersapi.com/
 * https://libretranslate.de/translate
-* https://api.openweathermap.org
 * https://fr.wikipedia.org/w/api.php
 * https://thatcopy.pw/catapi/rest/
 * https://api.adviceslip.com/advice

@@ -2,10 +2,8 @@ const Discord           = require("discord.js")
 const colors            = require("../colors.json")
 const fetch             = require("node-fetch")
 const calendarService   = require("../services/calendar")
-const weatherService    = require("../services/weather.js")
 const wikiService       = require("../services/wiki.js")
 const domainService     = require("../services/domains.js")
-const animeService      = require("../services/anime.js")
 const numberService     = require("../services/numbers.js")
 const translatorService = require("../services/translator.js")
 
@@ -17,18 +15,6 @@ async function sendDate (calendarParam){
         await calendarService.getGregorianDate().then(res => date = res)
     return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
         .setTitle('⏰  Date du jour').setDescription(date)
-}
-
-async function sendWeather (city){
-    let weatherInfo = ''
-    try {
-        await weatherService.getCityWeather(city.toLowerCase())
-            .then(res => weatherInfo = res)
-    } catch (error){
-        weatherInfo = 'Ville non trouvée !'
-    }
-    return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
-        .setTitle('🏢  '+city).setDescription(weatherInfo)
 }
 
 async function sendWikiResponse (typeArg, word){
@@ -47,22 +33,6 @@ async function sendDomainsData (word){
         .then((domainsData) => domains = domainsData.slice(0,-1))
     return new Discord.MessageEmbed().setColor(colors.INFO_COLOR)
         .setTitle('🌍  Domaines Internet').setDescription(domains)
-}
-
-async function sendAnimeCitation (){
-    let citationAnime = ''
-    await animeService.getRandomAnimeCitation().then(citationInfos => citationAnime = citationInfos)
-    return new Discord.MessageEmbed().setColor(colors.FUN_COLOR)
-        .setAuthor('⛩  '+citationAnime.anime).setDescription(citationAnime.quote)
-        .setFooter(citationAnime.character)
-}
-
-async function sendCat (){
-    let catUrl = ''
-    await fetch('https://thatcopy.pw/catapi/rest/')
-        .then(res => res.json().then(cat => catUrl = cat.webpurl))
-    return new Discord.MessageEmbed().setColor(colors.FUN_COLOR)
-        .setImage(catUrl)
 }
 
 async function sendRandomNumberFunFact (){
@@ -110,11 +80,8 @@ async function sendCurrencyChange (currencyFrom, currencyTo){
 
 module.exports = {
     sendDate,
-    sendWeather,
     sendWikiResponse,
     sendDomainsData,
-    sendCat,
-    sendAnimeCitation,
     sendRandomNumberFunFact,
     sendNumberFunFact,
     sendTranslatedWord,

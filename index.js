@@ -1,7 +1,6 @@
 const syncCommands     = require("./commands/syncCommands.js")
 const asyncCommands    = require("./commands/asyncCommands.js")
 const discordCommands  = require("./commands/discordCommands.js")
-const twitterCommands  = require("./commands/twitterCommands.js")
 const config           = require("./config.json")
 
 const ytdl     = require('ytdl-core')
@@ -51,17 +50,11 @@ client.on('message', async message => {  // START
             assistantTextChannel.send(syncCommands.sendConvertedUnitsNumbers(numberToConvert, conversionFrom))
         } else if (command === 'date' && args.length === 1) {       
             asyncCommands.sendDate(args[0]).then(date => assistantTextChannel.send(date))
-        } else if (command === 'meteo' && args.length === 1){       
-            asyncCommands.sendWeather(args[0]).then(weather => assistantTextChannel.send(weather))
         } else if (command === 'wiki' && args.length === 2){        
             asyncCommands.sendWikiResponse(args[0], args[1]).then(response => assistantTextChannel.send(response))
         } else if (command === 'domaine' && args.length === 1){     
             asyncCommands.sendDomainsData(args[0])
                 .then((domainsData) => assistantTextChannel.send(domainsData))
-        } else if (command === 'chat' && args.length === 0){        
-            asyncCommands.sendCat().then(cat => assistantTextChannel.send(cat))
-        } else if (command === 'anime' && args.length === 0){       
-            asyncCommands.sendAnimeCitation().then(citation => assistantTextChannel.send(citation))
         } else if (command === 'nombre' && args.length === 0){      
             asyncCommands.sendRandomNumberFunFact().then(fact => assistantTextChannel.send(fact))
         } else if (command === 'nombre' && args.length === 1){      
@@ -74,9 +67,6 @@ client.on('message', async message => {  // START
         } else if (command === 'change' && args.length === 2){      
             asyncCommands.sendCurrencyChange(args[0], args[1])
                 .then(changeInfos => assistantTextChannel.send(changeInfos))
-        } else if (command === 'tweet' && args.length === 1){
-            twitterCommands.sendTextTweet(args[0], 'by '+message.author.username)
-            assistantTextChannel.send(twitterCommands.sendTweetConfirmation(message.author.username))
         } else if (command === 'embed') {
             message.reply(embeds.getEmbed())
         } else if (command === 'question' && args.length > 0) {
