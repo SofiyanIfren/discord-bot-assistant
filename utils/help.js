@@ -7,8 +7,7 @@ function sendBasicHelp (){
         { name: 'info',   value: 'Commandes autour de l\'informatique disponibles sur ce serveur' },
         { name: 'text',   value: 'Commandes textuelles disponibles sur ce serveur' },
         { name: 'math',   value: 'Commandes mathématiques disponibles sur ce serveur' },
-        { name: 'fun',    value: 'Commandes fun disponibles sur ce serveur' },
-        { name: 'tweet',  value: 'Commandes du compte Twitter associé à ce serveur' }
+        { name: 'fun',    value: 'Commandes fun disponibles sur ce serveur' }
     ]
 }
 
@@ -27,7 +26,6 @@ function sendSpecificHelp (argument){
     else if (argument === 'utils')
         return [
             { name: 'date <format>', value: 'Obtention de la date du jour (Options : gregoire / hegire)' },
-            { name: 'meteo <nom_ville>', value: 'Obtention de la météo (température extérieure) d\'une ville donnée, en °C et °F' },
             { name: 'convert <nombre> <origine>', value: 'Conversion d\'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)' }
         ]
     else if (argument === 'money')
@@ -48,15 +46,6 @@ function sendSpecificHelp (argument){
             { name: 'nombre <nombre>', value: 'Obtention d\'un fait aléatoire à propos d\'un nombre donné, en anglais (Si aucun nombre n\'est donné, un fait est donné à propos d\'un nombre aléatoire )' },
             { name: 'convert <nombre> <origine> <destination>', value: 'Conversion d\'un nombre (Options : binary / octal / decimal / hexadecimal)' }
         ]
-    else if (argument === 'fun')
-        return [
-            { name: 'chat', value: 'Obtention d\'une image de chat aléatoire' },
-            { name: 'anime', value: 'Obtention d\'une citation aléatoire d\'anime, en anglais' }
-        ]
-    else if (argument === 'tweet')
-        return [
-            { name: 'tweet <proverbe/advice>', value: 'Tweet un proverbe (fr) ou un conseil (en) sur le compte Twitter associé à ce serveur' }
-    ]
     else return [
         { name: 'Erreur de syntaxe !', value : 'L\'argument que tu as renseigné n\'existe pas...'}
     ]
