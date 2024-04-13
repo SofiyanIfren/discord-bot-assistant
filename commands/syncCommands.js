@@ -32,11 +32,6 @@ function sendConvertedNumbers (numberToConvert, conversionFrom, conversionTo){
         .setTitle('📈  '+conversionTo+' : '+converterUtils.convertNumbers(numberToConvert, conversionFrom, conversionTo))
         .setDescription(conversionFrom+' : '+numberToConvert)
 }
-function sendConvertedUnitsNumbers (numberToConvert, conversionFrom){
-    return new Discord.MessageEmbed().setColor(colors.UTILS_COLOR)
-        .setTitle('📐  '+converterUtils.convertUnits(numberToConvert, conversionFrom))
-        .setDescription(numberToConvert+' '+conversionFrom)
-}
 
 function sendPoll (allArgs){
     let message = new Discord.MessageEmbed().setColor(colors.SERVER_COLOR)
@@ -66,6 +61,5 @@ module.exports = {
     sendSpecificHelp,
     sendProverbe,
     sendConvertedNumbers,
-    sendConvertedUnitsNumbers,
     sendPoll
 }

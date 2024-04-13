@@ -1,77 +1,120 @@
-/***** POIDS *****/
-function convertFromGramme (grWeight){ return grWeight*0.035274 +'oz (' + grWeight*0.0022046 +'lb)' }
-function convertFromOunceToGramme (ozWeight){ return ozWeight/0.035274  +'gr' }
-function convertFromPoundToGramme (lbWeight){ return lbWeight/0.0022046 +'gr' }
-
-function convertFromKilogramme (kgWeight){ return kgWeight*0.15747 +'st' }
-function convertFromStoneToKilogramme (stWeight){ return stWeight/0.15747 +'kg' }
-
-/***** TAILLE *****/
-function convertFromPouceToCentimetre (inchSize){ return inchSize/0.39370 +'cm' }
-function convertFromFootToCentimetre (footSize){ return footSize/0.032808 +'cm' }
-function convertFromYardToCentimetre (yardSize){ return yardSize/0.010936 +'cm' }
-
-function convertFromCentimetre (cmSize){ return cmSize*0.39370 +'inch ('+ cmSize*0.032808 +'ft - '+ cmSize*0.010936 +'yd)'}
-function convertFromKilometre (kmSize){ return kmSize*0.62137 +'mile(s)' }
-
-function convertFromMileToKilometre (mileSize){ return mileSize/0.62137 +'km'}
-
-/***** TEMPERATURE *****/
-function convertFromCelsiusToFarenheit (celciusTemp){ return (celciusTemp*1.8)+32 +' °F' }
-function convertFromFarenheitToCelsius (farenheitTemp){ return (farenheitTemp-32)/1.8 +' °C' }
-
-/***** CONVERSION **** */
-function convertUnits (numberToConvert, conversionFrom){
-    let result = ''
-
-    if (conversionFrom.toLowerCase() === 'gr')          result = convertFromGramme(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'oz')          result = convertFromOunceToGramme(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'lb')          result = convertFromPoundToGramme(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'kg')          result = convertFromKilogramme(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'st')          result = convertFromStoneToKilogramme(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'inch')        result = convertFromPouceToCentimetre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'ft')          result = convertFromFootToCentimetre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'yd')          result = convertFromYardToCentimetre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'cm')          result = convertFromCentimetre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'km')          result = convertFromKilometre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'mile')        result = convertFromMileToKilometre(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'celsius')     result = convertFromCelsiusToFarenheit(numberToConvert)
-    if (conversionFrom.toLowerCase() === 'farenheit')   result = convertFromFarenheitToCelsius(numberToConvert)
-
-    return result
-}
-
 function convertNumbers (numberToConvert, conversionFrom, conversionTo){
-    let conversionFromFormat = ''
-    let conversionToFormat   = ''
 
-    if(conversionFrom === 'binary')            conversionFromFormat = 2
-    else if(conversionFrom === 'octal')        conversionFromFormat = 8
-    else if(conversionFrom === 'decimal')      conversionFromFormat = 10
-    else if(conversionFrom === 'hexadecimal')  conversionFromFormat = 16
-
-    if(conversionTo === 'binary')              conversionToFormat = 2
-    else if(conversionTo === 'octal')          conversionToFormat = 8
-    else if(conversionTo === 'decimal')        conversionToFormat = 10
-    else if(conversionTo === 'hexadecimal')    conversionToFormat = 16
+    /* MEASUREMENTS */
+    if (conversionFrom === 'lb'){
+        if (conversionTo === 'kg')  return numberToConvert/2.2046
+        if (conversionTo === 'oz')  return numberToConvert*16
+        if (conversionTo === 'g')   return numberToConvert/0.0022046
+        if (conversionTo === 'st')  return numberToConvert*0.071429
+    }
     
-    return parseInt(numberToConvert,conversionFromFormat).toString(conversionToFormat)
+    if (conversionFrom === 'kg'){
+        if (conversionTo === 'lb')  return numberToConvert*2.2046
+        if (conversionTo === 'oz')  return numberToConvert*35.274
+        if (conversionTo === 'g')   return numberToConvert*1000
+        if (conversionTo === 'st')  return numberToConvert*0.1574
+    }
+
+    if (conversionFrom === 'oz'){
+        if (conversionTo === 'lb')  return numberToConvert*0.0625
+        if (conversionTo === 'kg')  return numberToConvert/35.274
+        if (conversionTo === 'g')   return numberToConvert/0.035274
+        if (conversionTo === 'st')  return numberToConvert*0.0044643
+    }
+
+    if (conversionFrom === 'g'){
+        if (conversionTo === 'lb')  return numberToConvert*0.0022046
+        if (conversionTo === 'kg')  return numberToConvert/1000
+        if (conversionTo === 'oz')  return numberToConvert*0.035274
+        if (conversionTo === 'st')  return numberToConvert*0.00015747
+    }
+
+    if (conversionFrom === 'st'){
+        if (conversionTo === 'lb')  return numberToConvert*14
+        if (conversionTo === 'kg')  return numberToConvert/0.15747
+        if (conversionTo === 'oz')  return numberToConvert*224
+        if (conversionTo === 'g')   return numberToConvert/0.00015747
+    }
+
+    /* TEMPERATURES */
+    if (conversionFrom === 'celsius' && conversionTo === 'farenheit')
+        return (numberToConvert*1.8)+32
+    if (conversionFrom === 'farenheit' && conversionTo === 'celsius')
+        return (numberToConvert-32)/1.8
+
+    /* LENGTH */
+    if (conversionFrom === 'ft'){
+        if (conversionTo === 'm')   return numberToConvert/3.2808
+        if (conversionTo === 'in')  return numberToConvert*12
+        if (conversionTo === 'cm')  return numberToConvert/0.032808
+        if (conversionTo === 'yd')  return numberToConvert*0.33333
+        if (conversionTo === 'km')  return numberToConvert/3280.8
+        if (conversionTo === 'miles')  return numberToConvert*0.00018939
+    }
+
+    if (conversionFrom === 'm'){
+        if (conversionTo === 'ft')  return numberToConvert*3.2808
+        if (conversionTo === 'in')  return numberToConvert*39.370
+        if (conversionTo === 'cm')  return numberToConvert/0.01
+        if (conversionTo === 'yd')  return numberToConvert*1.0936
+        if (conversionTo === 'km')  return numberToConvert/1000
+        if (conversionTo === 'miles')  return numberToConvert*0.00062137
+    }
+
+    if (conversionFrom === 'in'){
+        if (conversionTo === 'ft')  return numberToConvert*0.083333
+        if (conversionTo === 'm')   return numberToConvert/39.370
+        if (conversionTo === 'cm')  return numberToConvert/0.39370
+        if (conversionTo === 'yd')  return numberToConvert*0.027778
+        if (conversionTo === 'km')  return numberToConvert/39370
+        if (conversionTo === 'miles')  return numberToConvert*0.000015783
+    }
+
+    if (conversionFrom === 'cm'){
+        if (conversionTo === 'ft')  return numberToConvert*0.032808
+        if (conversionTo === 'm')   return numberToConvert/100
+        if (conversionTo === 'in')  return numberToConvert*0.39370
+        if (conversionTo === 'yd')  return numberToConvert*0.010936
+        if (conversionTo === 'km')  return numberToConvert/100000
+        if (conversionTo === 'miles')  return numberToConvert*0.0000062137
+    }
+
+    if (conversionFrom === 'yd'){
+        if (conversionTo === 'ft')  return numberToConvert*3
+        if (conversionTo === 'm')   return numberToConvert/1.0936
+        if (conversionTo === 'in')  return numberToConvert*36
+        if (conversionTo === 'cm')  return numberToConvert/0.010936
+        if (conversionTo === 'km')  return numberToConvert/1093.6
+        if (conversionTo === 'miles')  return numberToConvert*0.00056818
+    }
+
+    if (conversionFrom === 'km'){
+        if (conversionTo === 'ft')  return numberToConvert*3280.8
+        if (conversionTo === 'm')   return numberToConvert*1000
+        if (conversionTo === 'in')  return numberToConvert*39370
+        if (conversionTo === 'cm')  return numberToConvert*100000
+        if (conversionTo === 'yd')  return numberToConvert*1093.6
+        if (conversionTo === 'miles')  return numberToConvert*0.62137
+    }
+
+    if (conversionFrom === 'miles'){
+        if (conversionTo === 'ft')  return numberToConvert*5280
+        if (conversionTo === 'm')   return numberToConvert/0.00062137
+        if (conversionTo === 'in')  return numberToConvert*63360
+        if (conversionTo === 'cm')  return numberToConvert/0.0000062137
+        if (conversionTo === 'yd')  return numberToConvert*1760
+        if (conversionTo === 'km')  return numberToConvert/0.62137
+    }
+
+    /* NUMBERS */
+    if(conversionTo === 'binary')            return Number(numberToConvert).toString(2)
+    else if(conversionTo === 'octal')        return Number(numberToConvert).toString(8)
+    else if(conversionTo === 'decimal')      return Number(numberToConvert).toString(10)
+    else if(conversionTo === 'hexadecimal')  return Number(numberToConvert).toString(16)
+    
+    return ""
 }
 
 module.exports = {
-    convertFromGramme,
-    convertFromOunceToGramme,
-    convertFromPoundToGramme,
-    convertFromKilogramme,
-    convertFromStoneToKilogramme,
-    convertFromPouceToCentimetre,
-    convertFromFootToCentimetre,
-    convertFromYardToCentimetre,
-    convertFromCentimetre,
-    convertFromKilometre,
-    convertFromMileToKilometre,
-    convertFromCelsiusToFarenheit,
-    convertFromFarenheitToCelsius,
-    convertUnits,
     convertNumbers
 }

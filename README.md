@@ -43,7 +43,7 @@ Créer un fichier config.json à la racine du projet et y ajouter les informatio
 #### Utilitaires
 <code>!date <format></code> Obtention de la date du jour (Options : gregoire / hegire)<br/>
 <code>!meteo <nom_ville></code> Obtention de la météo (température extérieure) d'une ville donnée, en °C et °F<br/>
-<code>!convert <nombre> <origine></code> Conversion d'une unité (Options : gr / oz / lb / kg / st / inch / ft / yd / cm / km / mile / celsius / farenheit)
+<code>!convert <nombre> <origine> <destination></code> Conversion d'une unité (Options : gr / oz / lb / kg / st // inch / ft / yd / cm / km / mile // celsius / farenheit)
 
 #### Finances
 <code>!change <monnaie_origine> <monnaie_destination></code> Conversion (cours du jour) d'une monnaie donnée dans une monnaie d'arrivée (Options : sigles monétaires, tels USD, GBP, EUR,...
